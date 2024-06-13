@@ -23,10 +23,13 @@ let when = [
   "while I was praying"
 ];
 
-function excuseGenerator(whoRandom, actionRandom, whatRandom, whenRandom) {
-  let who = Math.floor(Math.random() * whoRandom.length);
-  let action = Math.floor(Math.random() * actionRandom.length);
-  let what = Math.floor(Math.random() * whatRandom.length);
-  let when = Math.floor(Math.random() * whenRandom.length);
-  return `${whoRandom[who]}  ${actionRandom[action]} ${whatRandom[what]} ${whenRandom[when]} `;
+function excuseGenerator(who, action, what, when) {
+  return `${randomWord(who)}  ${randomWord(action)} ${randomWord(
+    what
+  )} ${randomWord(when)} `;
+}
+
+function randomWord(arrWord) {
+  let result = Math.floor(Math.random() * arrWord.length);
+  return arrWord[result];
 }
